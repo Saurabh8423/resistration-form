@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    .saurabh {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form name="registrationForm" method="POST" action="#">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+    <br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="18" max="100" required>
+    <br>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <br>
+    
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <br>
+    
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color" required>
+    <br>
+    
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.registrationForm.addEventListener('submit', function(event) {
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+      var phoneInput = document.getElementById('phone');
+      var passwordInput = document.getElementById('password');
+      var ageInput = document.getElementById('age');
+      var genderInput = document.getElementById('gender');
+      var dateInput = document.getElementById('date');
+      var colorInput = document.getElementById('color');
+      
+      var valid = true;
+
+      if (nameInput.value.trim() === '') {
+        nameInput.classList.add('saurabh');
+        valid = false;
+      } else {
+        nameInput.classList.remove('saurabh');
+      }
+
+      if (emailInput.value.trim() === '') {
+        emailInput.classList.add('saurabh');
+        valid = false;
+      } else {
+        emailInput.classList.remove('saurabh');
+      }
+
+      if (phoneInput.value.trim() === '') {
+        phoneInput.classList.add('saurabh');
+        valid = false;
+      } else {
+        phoneInput.classList.remove('saurabh');
+      }
+
+      if (passwordInput.value.trim() === '') {
+        passwordInput.classList.add('saurabh');
+        valid = false;
+      } else {
+        passwordInput.classList.remove('saurabh');
+      }
+
+      if (ageInput.value === '' || ageInput.value < 18 || ageInput.value > 100) {
+        ageInput.classList.add('saurabh');
+        valid = false;
+      } else {
+        ageInput.classList.remove('saurabh');
+      }
+
+      if (genderInput.value === '') {
+        genderInput.classList.add('saurabh');
+        valid = false;
+      } else {
+        genderInput.classList.remove('saurabh');
+      }
+    }
+  </script>
+    
+</body>
+</html>
